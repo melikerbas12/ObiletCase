@@ -7,7 +7,7 @@
 <div class="container-fluid">
     <div class="bg-primary text-white py-4">
         <div class="container">
-           <a href="@Url.Action("/Journey/Index")" style="color: white"><i class="fa fa-arrow-left fa-2x"></i></a> <div style="text-align: center"><h3> @Model.OriginLocation - @Model.DestinationLocation<br />"@Model.Date?.ToString("dd MMMM dddd")"</h3></div>
+           <button id="goBackButton" style="display: contents;"><i class="fa fa-arrow-left fa-2x"></i></button><div style="text-align: center"><h3> @Model.OriginLocation - @Model.DestinationLocation<br />"@Model.Date?.ToString("dd MMMM dddd")"</h3></div>
         </div>
     </div>
     @if (Model.BusJourneys != null && Model.BusJourneys.Count > 0)

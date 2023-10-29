@@ -78,14 +78,15 @@ public class JourneyController : Controller
             DestinationId = destinationId,
             DepartureDate = date.ToString("yyyy-MM-dd")
         };
+
         var result = await _journeyService.GetBusJourneys(requestModel);
         if (result.Success)
         {
             BusJourneyViewModel busJourneyViewModel = new()
             {
-                OriginLocation = await _redisContext.GetAsync<string>(_cacheItemSetting.Db, originId.ToString()),
-                DestinationLocation = await _redisContext.GetAsync<string>(_cacheItemSetting.Db, destinationId.ToString()),
-                Date = await _redisContext.GetAsync<DateTime>(_cacheItemSetting.Db, date.ToString()),
+                OriginLocation = await _redisContext.GetAsync<string>(_cacheItemSetting.Db,  string.Format("{0}:{1}", "LocationId", originId)),
+                DestinationLocation =  await _redisContext.GetAsync<string>(_cacheItemSetting.Db,  string.Format("{0}:{1}", "LocationId", destinationId)),
+                Date = date,
                 BusJourneys = result.Data
             };
             return View(busJourneyViewModel);
