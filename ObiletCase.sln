@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObiletCase.UI", "ObiletCase.UI\ObiletCase.UI.csproj", "{24CE21D4-7C64-4CA8-8E98-F912A520F18A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObiletCase.Core", "ObiletCase.Core\ObiletCase.Core.csproj", "{6561CA3E-A45F-4A60-9CB3-05DDEBCF074E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObiletCase.Business", "ObiletCase.Business\ObiletCase.Business.csproj", "{7CE73A0A-D28D-4AFA-BB53-7E38A5F360B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObiletCase.ApiClient", "ObiletCase.ApiClient\ObiletCase.ApiClient.csproj", "{F6C654C6-AD8D-4197-85CF-373FA1C90770}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24CE21D4-7C64-4CA8-8E98-F912A520F18A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24CE21D4-7C64-4CA8-8E98-F912A520F18A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24CE21D4-7C64-4CA8-8E98-F912A520F18A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24CE21D4-7C64-4CA8-8E98-F912A520F18A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6561CA3E-A45F-4A60-9CB3-05DDEBCF074E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6561CA3E-A45F-4A60-9CB3-05DDEBCF074E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6561CA3E-A45F-4A60-9CB3-05DDEBCF074E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6561CA3E-A45F-4A60-9CB3-05DDEBCF074E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CE73A0A-D28D-4AFA-BB53-7E38A5F360B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CE73A0A-D28D-4AFA-BB53-7E38A5F360B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CE73A0A-D28D-4AFA-BB53-7E38A5F360B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CE73A0A-D28D-4AFA-BB53-7E38A5F360B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6C654C6-AD8D-4197-85CF-373FA1C90770}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6C654C6-AD8D-4197-85CF-373FA1C90770}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6C654C6-AD8D-4197-85CF-373FA1C90770}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6C654C6-AD8D-4197-85CF-373FA1C90770}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Hata";
+}
+@model ObiletCase.Core.Models.ErrorViewModel
+
+@if (Model != null)
+{
+    <div class="error-container">
+    <h1 class="error-title">Hata Oluştu</h1>
+    <p class="error-message">Status Code: @Model.StatusCode</p>
+    <p class="error-message">Path: @Model.Path</p>
+        @foreach (var message in Model.ErrorMessages)
+        {
+            <p class="error-message">Hata Mesajı: @message</p>
+        }
+    </div>
+}

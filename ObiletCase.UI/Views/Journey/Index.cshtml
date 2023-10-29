@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+@using ObiletCase.UI.ViewModels;
+@model BusLocationViewModel
+<style>
+    .location {
+        background-color: gray;
+        border: none;
+        color: white;
+        font-size: 15px;
+        cursor: pointer;
+        border-radius: 25px;
+    }
+</style>
+<form id="busJourneyForm" action="~/Journey/BusJourney" method="post">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                <div style="padding-left:16px;">
+                    <label for="origin" class="font-weight-bold">Kalkış Noktası</label>
+                    </div>
+                        <select class="selectpicker btn-lg origin w-100" required name="OriginId" style="padding-bottom: 0; margin-bottom: 0 " id="origin" data-live-search="true" title="İl veya ilçe adı yazın"   data-live-search-placeholder="İl veya ilçe adı yazın" data-live-search-normalize="false" data-live-search-style="contains">
+                            @if (Model.BusLocations != null && Model.BusLocations.Count > 0)
+                            {
+                                @foreach (var item in Model.BusLocations)
+                                {
+                                    if (Model.OriginId.HasValue && Model.OriginId.Value == item.Id)
+                                    {
+                                        <option value=@item.Id selected>@item.Name</option>
+                                    }
+                                    else
+                                    {
+                                        <option value=@item.Id>@item.Name</option>
+                                    }
+
+                                }
+                            }
+                        </select><br />
+                        <div style="margin-left: 85% "><button type="button" class="btn location btn-sm " id="locationExchange" style="margin-left: 20px; margin-top: 0;margin-bottom:0">&nbsp;<i class="fa  fa-arrows-v"></i>&nbsp;</button></div>
+                            <div style="padding-left:16px;">
+                          <label for="destination" class="font-weight-bold">Varış Noktası</label>
+                          </div>
+                        <select class="selectpicker btn-lg destination w-100"required name="DestinationId" style="padding-top: 0;margin-top:0 " id="destination" data-live-search="true" data-live-search-placeholder="İl veya ilçe adı yazın" title="İl veya ilçe adı yazın" data-live-search-normalize="false" data-live-search-style="contains">
+                            @if (Model.BusLocations != null && Model.BusLocations.Count > 0)
+                            {
+                                @foreach (var item in Model.BusLocations)
+                                {
+                                    if (Model.DestinationId.HasValue && Model.DestinationId.Value == item.Id)
+                                    {
+                                        <option value=@item.Id selected>@item.Name</option>
+                                    }
+                                    else
+                                    {
+                                        <option value=@item.Id>@item.Name</option>
+                                    }
+
+                                }
+                            }
+                        </select>
+                        <div class="row">
+                            <div class="col-lg-9" style="width:85%">
+                                <div class="datepicker date input-group p-0 shadow-sm" style="margin-top: 10px; margin-left: 18px;width: 100% ">
+                                    <input type="text" name="Date" placeholder="Choose a reservation date" required value="@Model.Date.ToString("dd.MM.yyyy")" class="form-control" id="reservationDate">
+                                    <div class="input-group-append"><span class="input-group-text px-4"><i class="fa fa-calendar"></i></span></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3" style="width:15%">
+                                <button type="button" class="btn btn-outline-dark btn-sm" id="today" style="margin-bottom: 2px; padding-top: 1px; padding-bottom: 1px;">Bugün</button><br />
+                                <button type="button" class="btn btn-outline-dark btn-sm" id="tomorrow" style=" padding-top: 1px; padding-bottom: 1px;">&nbsp;Yarın&nbsp;&nbsp;</button>
+                            </div>
+                        </div>
+                        <div>
+                        <button type="submit" class="btn btn-primary btn-block" id="TicketFind" style=" margin: 10px; width:50%; margin-left:25%;">Biletini Bul &nbsp; <i class="fa fa-arrow-right"></i></button>
+                        <div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+</div>
+</form>
